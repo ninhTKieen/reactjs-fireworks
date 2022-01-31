@@ -1,10 +1,27 @@
-# Getting Started with Create React App
+# Fireworks React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A stupid Fireworks React App was made by a stupid developer
+
+## Requirements
+
+- Node Js version &geq; 12.
+- `yarn` for manage packages (instead of `npm`). <br>
+  For installation at global scope:
+  ```bash
+  $ npm install -g yarn
+  ```
+
+## Recommendations
+
+- IDE: `Visual Studio Code` (VS Code).
 
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `yarn install`
+
+To install dependencies(node_modules)
 
 ### `yarn start`
 

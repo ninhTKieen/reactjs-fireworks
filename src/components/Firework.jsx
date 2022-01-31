@@ -1,21 +1,41 @@
-import React from "react";
-import { Fireworks } from "fireworks/lib/react";
+import React, { useEffect } from "react";
+import { Fireworks } from "fireworks-js/dist/react";
+import { Howl, Howler } from "howler";
+import HappyNewYear from "src/audio/hpny.mp3";
+
+const audio = {
+  sound: HappyNewYear,
+};
 
 const Firework = () => {
-  let fxProps = {
-    count: 3,
-    interval: 200,
-    colors: ["#cc3333", "#4CAF50", "#81C784"],
-    calc: (props, i) => ({
-      ...props,
-      x: (i + 1) * (window.innerWidth / 3) - (i + 1) * 100,
-      y: 200 + Math.random() * 100 - 50 + (i === 2 ? -80 : 0),
-    }),
+  const options = {
+    speed: 3,
   };
+
+  const style = {
+    top: 0,
+    left: 0,
+    width: "100%",
+    height: "100%",
+    position: "fixed",
+    background: "#000",
+  };
+
+  const SoundPlay = (src) => {
+    const sound = new Howl({
+      src,
+      autoplay: true,
+    });
+    sound.play();
+  };
+
+  useEffect(() => {
+    SoundPlay(audio.sound);
+  }, []);
 
   return (
     <React.Fragment>
-      <Fireworks {...fxProps} />
+      <Fireworks options={options} style={style} />
     </React.Fragment>
   );
 };
